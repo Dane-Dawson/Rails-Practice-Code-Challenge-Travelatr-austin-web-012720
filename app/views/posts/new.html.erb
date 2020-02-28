@@ -1,0 +1,20 @@
+<h1>Posts#new</h1>
+<p>Find me in app/views/posts/new.html.erb</p>
+<p><% if @post.errors.any? %>
+<p> Ya done messed up, check yo'self </p>
+<% @post.errors.full_messages.each do |m|%>
+    <%= m %><br><br>
+    <% end %>
+ <% end %>
+
+<%= form_for @post do |f|%>
+<%= f.label :title%>
+<%= f.text_field :title%><br>
+<%= f.label :content%>
+<%= f.text_area :content%><br>
+<%= f.label :blogger%>
+<%= f.collection_select(:blogger_id, Blogger.all, :id, :name, prompt: true) %><br>
+<%= f.label :destination%>
+<%= f.collection_select(:destination_id, Destination.all, :id, :name, prompt: true) %><br>
+<%= f.submit%>
+<%end%>

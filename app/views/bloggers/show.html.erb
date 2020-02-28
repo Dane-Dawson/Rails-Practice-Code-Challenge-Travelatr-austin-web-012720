@@ -1,0 +1,29 @@
+<h1>Bloggers#show</h1>
+
+<h2> <%= @blogger.name %> </h2>
+<ul>
+<% if !@blogger.posts.empty?%>
+    <% @blogger.last_five_posts.each do |post|%>
+        <li> <%= link_to post.title, post_path(post) %> </li>
+    <% end %>
+
+</ul>
+<br>
+<br>
+<br>
+<h4>Everyone loved this post! Peer Pressure!</h4>
+
+    <%= link_to @blogger.most_liked_post.title, post_path(@blogger.most_liked_post) %>
+<% else %>
+    <p> They don't have any posts...</p>
+<% end %>
+
+<br>
+<br>
+<br>
+<p><%= link_to "Back to all bloggers", bloggers_path%> </p>
+<br>
+<p> This person has accumulated </p>
+<p> <%= @blogger.total_likes%> </p>
+<p> likes! </p>
+

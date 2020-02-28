@@ -1,0 +1,15 @@
+<h1>Posts#show</h1>
+<p>Find me in app/views/posts/show.html.erb</p>
+<h3> <%= link_to @post.blogger.name, blogger_path(@post.blogger) %> </h3>
+<h1> <%= @post.title %> </h1>
+
+<p> <%= @post.content %> </p>
+
+<p> This post was written about <%= link_to @post.destination.name, destination_path(@post.destination)%>, click to learn more about that place!</p>
+<h1> <%= link_to "see all bloggers", bloggers_path%></h1>
+
+<p>Like(s)<%= @post.likes %> </p>
+
+<%= button_to "Like", action: "like"%>
+
+

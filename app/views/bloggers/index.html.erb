@@ -1,0 +1,10 @@
+<h1>Bloggers#index</h1>
+<p>Find me in app/views/bloggers/index.html.erb</p>
+<ul>
+<% @bloggers.each do |blogger|%>
+    <li><%= link_to blogger.name, blogger_path(blogger)%></li>
+    <% end %>
+</ul>
+
+<h2><%= link_to "Create new blogger", new_blogger_path%></h2>
+<h2><%= link_to "Create new post", new_post_path%>

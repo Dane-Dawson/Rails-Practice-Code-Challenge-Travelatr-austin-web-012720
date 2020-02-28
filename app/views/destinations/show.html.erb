@@ -1,0 +1,15 @@
+<h1>Destinations#show</h1>
+<p>Find me in app/views/destinations/show.html.erb</p>
+
+<p> Welcome to <%= @destination.name %>, in the beatiful country of <%= @destination.country %> </p>
+
+<p>The most popular post about this location!</p>
+<%= link_to @destination.most_liked_post.title, post_path(@destination.most_liked_post)%>
+<h3> The Average age of bloggers who visited this location is <%= @destination.avg_age %> </h3>
+<p>Look at some posts about this location!</p>
+<br>
+<% @destination.last_five_posts.each do |post|%>
+
+
+<%= link_to post.title, post_path(post)%><br>
+<% end %>
